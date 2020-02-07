@@ -1,0 +1,27 @@
+<div class="">
+<form>
+  <div>
+    <label>Name:</label>
+    <input name="name"
+            ng-model="citiesVM.city.name"
+            required="required"/>
+  </div>
+
+  <button ng-if="!citiesVM.city.id"
+           type="submit"
+           ng-click="citiesVM.create()">Create</button>
+  <div ng-if="citiesVM.city.id">
+    <button type="submit"
+            ng-click="citiesVM.update()">Update</button>
+    <button type="submit"
+            ng-click="citiesVM.remove()">Delete</button>
+  </div>
+  </form>
+
+<ul>
+      <li ng-repeat="city in citiesVM.cities | orderBy:'name'">
+        <a ng-click="citiesVM.edit(city)">{{city.name}}</a>
+      </li>
+</ul>
+
+</div>

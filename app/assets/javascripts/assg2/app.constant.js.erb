@@ -1,0 +1,13 @@
+(function() {
+  "use strict";
+
+  angular
+    .module("assg2")
+    .constant("assg2.APP_CONFIG", {
+      server_url: "<%= ENV['RAILS_API_URL'] %>",
+      main_page_html: "<%= asset_path('assg2/pages/main.html') %>",
+      cities_html: "<%= asset_path('assg2/cities/cities.html') %>",
+      form_html: "<%= asset_path('assg2/cities/form.html') %>"
+    });
+
+})();
